@@ -160,11 +160,11 @@ nn.SGD(training_data, 200, 500, 0.1, test_data=test_data)
 """
 
 nn = Network([1,8,8,1])
-x = np.linspace(0,6*np.pi,60000)
+x = np.linspace(0,8*np.pi,4000)
 y = np.sin(x)/4+0.5
 training_data = list(zip(x,y))
 test_data = training_data
-nn.SGD(training_data, 50, 50, 5, test_data=test_data)
+nn.SGD(training_data, 2000, 4, 0.25, test_data=test_data)
 
 y_ = [nn.feedforward(x_) for x_ in x]
 y__ = np.reshape(y_,(-1,1))
