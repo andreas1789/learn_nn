@@ -170,3 +170,4 @@ y_ = [nn.feedforward(x_) for x_ in x]
 y__ = np.reshape(y_,(-1,1))
 y__ = np.squeeze(y__)
 plt.plot(x,y__,x,y)
+plt.show()
