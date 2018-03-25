@@ -23,15 +23,12 @@ with graph.as_default():
     loss = tf.nn.l2_loss(result - y)
 
     optimizer = tf.train.AdamOptimizer().minimize(loss)
-    #global_step = tf.Variable(0)  # count the number of steps taken.
-    #learning_rate = tf.train.exponential_decay(0.005, global_step, 100000, 0.96, staircase=True)
-    #optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss, global_step=global_step)
 
 with tf.Session(graph=graph) as session:
     tf.global_variables_initializer().run()
     print("Initialized")
 
-    for i in range(20000):
+    for i in range(100000):
         tpoints = np.random.rand(100) * 20
         omegapoints = np.random.rand(100) * 2
         xpoints = np.array([tpoints, omegapoints]).T
